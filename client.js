@@ -1,7 +1,7 @@
 
 function initializeChatBox(){
-    const localstorageValue = localStorage.getItem("messages")
-    const messages = (localstorageValue? localstorageValue.split("#") : []).map(item => {
+    const localStorageValue = localStorage.getItem("messages")
+    const messages = (localStorageValue? localStorageValue.split("#") : []).map(item => {
         if(item) return item
     })
     messages?.forEach(item => {
@@ -24,8 +24,8 @@ socket.on("connect", data => {
    })
 })
 socket.on("serverMessage", message => {
-    let localstorageValue = localStorage.getItem("messages")? localStorage.getItem("messages")+ "#" + message : message   
-    localStorage.setItem("messages", localstorageValue )
+    let localStorageValue = localStorage.getItem("messages")? localStorage.getItem("messages")+ "#" + message : message   
+    localStorage.setItem("messages", localStorageValue )
     const paragraphElement = document.createElement("p");
     paragraphElement.innerText = message;
     const chatBox = document.querySelector(".chatBox");
