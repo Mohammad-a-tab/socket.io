@@ -18,7 +18,7 @@ socket.on("connect", data => {
    sendBtn.addEventListener("click", (e) => {
     const textBox = document.getElementById("text");
     const message = textBox.value;
-    if(!message) return alert("textbox cannot be empty")
+    if(!message) return alert("textBox cannot be empty")
     socket.emit("clientMessage", message)
     textBox.value = ""
    })

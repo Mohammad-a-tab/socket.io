@@ -40,10 +40,10 @@ teacherSocket.on("connect", data => {
         console.log(data );
     })
 })
-const strudentSocket = io("http://localhost:3000/student");
-strudentSocket.on("connect", data => {
-    strudentSocket.emit("studentClient", "message from student namespace")
-    strudentSocket.on("studentServer", data => {
+const studentSocket = io("http://localhost:3000/student");
+studentSocket.on("connect", data => {
+    studentSocket.emit("studentClient", "message from student namespace")
+    studentSocket.on("studentServer", data => {
         console.log(data );
     })
 })
